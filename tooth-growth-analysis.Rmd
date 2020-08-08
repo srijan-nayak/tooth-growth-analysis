@@ -1,0 +1,10 @@
+---
+title: "Analysis of tooth growth in guinea pigs"
+author: "Srijan Nayak"
+date: "08/08/2020"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
