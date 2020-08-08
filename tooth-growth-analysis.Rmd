@@ -14,3 +14,24 @@ knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
 library(dplyr)
 library(ggplot2)
 ```
+
+## Tooth length vs. supplement type and dose
+
+Let's see how the response varies for different supplement types and dosages
+with a boxplot.
+
+```{r boxplot, fig.height=3.2}
+ToothGrowth %>%
+  mutate(
+    dose = as.factor(dose),
+    # orange juice is coded as 'OJ' and ascorbic acid is coded as 'VC'
+    supp = if_else(supp == "OJ", "Orange juice", "Ascorbic acid")
+  ) %>%
+  ggplot() +
+  geom_boxplot(aes(x = dose, y = len, color = supp)) +
+  labs(title = "Effect of supplement type and dose on tooth length",
+       x = "Dose", y = "Tooth length", color = "Supplement type")
+```
+
+From the above plot it is seems that more dosage results in longer tooth length.
+It also seems that orange juice might be a better supplement than ascorbic acid.
