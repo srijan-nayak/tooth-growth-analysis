@@ -38,5 +38,5 @@ ToothGrowth %>%
        x = "Dose", y = "Tooth length", color = "Supplement type")
 ```
 
-From the above plot it is seems that more dosage results in longer tooth length.
-It also seems that orange juice might be a better supplement than ascorbic acid.
+From the above plot it seems that more dosage results in longer tooth length. It
+also seems that orange juice might be a better supplement than ascorbic acid.
