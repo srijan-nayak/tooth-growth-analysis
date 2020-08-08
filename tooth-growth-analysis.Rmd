@@ -15,6 +15,11 @@ library(dplyr)
 library(ggplot2)
 ```
 
+```{r load_data}
+# load the ToothGrowth data
+data("ToothGrowth")
+```
+
 ## Tooth length vs. supplement type and dose
 
 Let's see how the response varies for different supplement types and dosages
