@@ -9,17 +9,6 @@ output: pdf_document
 knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
 ```
 
-```{r load_libraries}
-# load libraries for analysis
-library(dplyr)
-library(ggplot2)
-```
-
-```{r load_data}
-# load the ToothGrowth data
-data("ToothGrowth")
-```
-
 ## Overview
 
 This analysis uses the "ToothGrowth" data from the `datasets` package in R which
@@ -31,6 +20,16 @@ It aims to answer the following questions:-
   * Does the supplement type for vitamin C matter
   * Does the dosage affect the amount of tooth growth
 
+```{r load_libraries}
+# load libraries for analysis
+library(dplyr)
+library(ggplot2)
+```
+
+```{r load_data}
+# load the ToothGrowth data
+data("ToothGrowth")
+```
 
 ## Tooth length vs. supplement type and dose
 
