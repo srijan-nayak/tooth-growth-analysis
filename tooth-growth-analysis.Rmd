@@ -34,7 +34,10 @@ data("ToothGrowth")
 ## Tooth length vs. supplement type and dosage
 
 Let's see how the response varies for different supplement types and dosages
-with a boxplot.
+with a boxplot. The boxplot also does a good job of summarizing the data.
+
+**Note:** In the dataset, "Orange juice" is coded as "OJ" and "Ascorbic acid" is
+coded as "VC".
 
 ```{r boxplot, fig.height=3.2}
 ToothGrowth %>%
