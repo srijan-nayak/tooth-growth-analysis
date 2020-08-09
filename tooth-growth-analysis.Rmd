@@ -20,6 +20,18 @@ library(ggplot2)
 data("ToothGrowth")
 ```
 
+## Overview
+
+This analysis uses the "ToothGrowth" data from the `datasets` package in R which
+contains data about tooth growth of guinea pigs who received vitamin C
+in different dosages.
+
+It aims to answer the following questions:-
+
+  * Does the supplement type for vitamin C matter
+  * Does the dosage affect the amount of tooth growth
+
+
 ## Tooth length vs. supplement type and dose
 
 Let's see how the response varies for different supplement types and dosages
