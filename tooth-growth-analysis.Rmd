@@ -55,7 +55,7 @@ Here $\bar{x}_{oj}$ is the mean tooth length for guinea pigs taking orange juice
 as the vitamin C supplement while $\bar{x}_{vc}$ is the mean tooth length for
 those taking ascorbic acid as the supplement.
 
-```{r supplement_t_test}
+```{r method_t_test}
 tooth_length_oj <- filter(ToothGrowth, supp == "OJ") %>% select(len)
 tooth_length_vc <- filter(ToothGrowth, supp == "VC") %>% select(len)
 (method_p_value <- t.test(tooth_length_oj, tooth_length_vc)$p.value)
