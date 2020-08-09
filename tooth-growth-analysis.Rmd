@@ -40,3 +40,27 @@ ToothGrowth %>%
 
 From the above plot it seems that more dosage results in longer tooth length. It
 also seems that orange juice might be a better supplement than ascorbic acid.
+
+## Does the method of dosage matter?
+
+The previous graph indicated that orange juice might better for tooth growth
+than ascorbic acid. This can be tested with a t-test, where
+$$
+\mu_0: \bar{x}_{oj} - \bar{x}_{vc} = 0
+$$
+$$
+\mu_a: \bar{x}_{oj} - \bar{x}_{vc} > 0
+$$
+Here $\bar{x}_{oj}$ is the mean tooth length for guinea pigs taking orange juice
+as the vitamin C supplement while $\bar{x}_{vc}$ is the mean tooth length for
+those taking ascorbic acid as the supplement.
+
+```{r supplement_t_test}
+tooth_length_oj <- filter(ToothGrowth, supp == "OJ") %>% select(len)
+tooth_length_vc <- filter(ToothGrowth, supp == "VC") %>% select(len)
+(method_p_value <- t.test(tooth_length_oj, tooth_length_vc)$p.value)
+```
+
+The test has a p-value of $`r round(method_p_value, 3)` > 0.05$, thus we fail to
+reject the null hypothesis that **the method of dosage doesn't matter** at a
+significance level of 5%.
