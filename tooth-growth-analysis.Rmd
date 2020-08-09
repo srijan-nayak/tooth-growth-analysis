@@ -90,3 +90,12 @@ tooth_length_lo <- filter(ToothGrowth, dose < 2) %>% select(len)
 The test has a p-value of $`r round(amount_p_value, 3)` < 0.05$, thus we reject
 the null hypothesis at a significance level of 5% and can say that **higher
 dosages are responsible for longer tooth lengths**.
+
+## Assumptions
+
+The conclusions from the above tests depend on the following assumptions:-
+
+  * The data is representative of the population of guinea pigs given vitamin c
+  supplements
+  * There were no other influencing factors on the tooth length for any given
+  guinea pig
