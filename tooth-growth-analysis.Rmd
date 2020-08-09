@@ -31,7 +31,7 @@ library(ggplot2)
 data("ToothGrowth")
 ```
 
-## Tooth length vs. supplement type and dose
+## Tooth length vs. supplement type and dosage
 
 Let's see how the response varies for different supplement types and dosages
 with a boxplot.
@@ -45,14 +45,14 @@ ToothGrowth %>%
   ) %>%
   ggplot() +
   geom_boxplot(aes(x = dose, y = len, color = supp)) +
-  labs(title = "Effect of supplement type and dose on tooth length",
-       x = "Dose", y = "Tooth length", color = "Supplement type")
+  labs(title = "Effect of supplement type and dosage on tooth length",
+       x = "Dosage", y = "Tooth length", color = "Supplement type")
 ```
 
 From the above plot it seems that more dosage results in longer tooth length. It
 also seems that orange juice might be a better supplement than ascorbic acid.
 
-## Does the method of dosage matter?
+## Does the method of dose matter?
 
 The previous graph indicated that orange juice might be better for tooth growth
 than ascorbic acid. This can be tested with a t-test, where
@@ -73,7 +73,7 @@ tooth_length_vc <- filter(ToothGrowth, supp == "VC") %>% select(len)
 ```
 
 The test has a p-value of $`r round(method_p_value, 3)` > 0.05$, thus we fail to
-reject the null hypothesis that **the method of dosage doesn't matter** at a
+reject the null hypothesis that **the method of dose doesn't matter** at a
 significance level of 5%.
 
 ## Does the amount of dosage matter?
@@ -88,9 +88,9 @@ $$
 $$
 \mu_a: \bar{x}_{hi} - \bar{x}_{lo} > 0
 $$
-Here $\bar{x}_{hi}$ is the mean of tooth lengths for guinea pigs having dosage
-amount equal to 2 mg/day and $\bar{x}_{lo}$ is the mean of tooth lengths for
-those having dosage amount equal to 0.5 mg/day or 1 mg/day.
+Here $\bar{x}_{hi}$ is the mean of tooth lengths for guinea pigs having dosages
+equal to 2 mg/day and $\bar{x}_{lo}$ is the mean of tooth lengths for
+those having dosages equal to 0.5 mg/day or 1 mg/day.
 
 ```{r amount_t_test}
 tooth_length_hi <- filter(ToothGrowth, dose == 2) %>% select(len)
