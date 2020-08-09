@@ -43,7 +43,7 @@ also seems that orange juice might be a better supplement than ascorbic acid.
 
 ## Does the method of dosage matter?
 
-The previous graph indicated that orange juice might better for tooth growth
+The previous graph indicated that orange juice might be better for tooth growth
 than ascorbic acid. This can be tested with a t-test, where
 $$
 \mu_0: \bar{x}_{oj} - \bar{x}_{vc} = 0
