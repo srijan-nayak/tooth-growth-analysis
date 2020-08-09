@@ -64,3 +64,29 @@ tooth_length_vc <- filter(ToothGrowth, supp == "VC") %>% select(len)
 The test has a p-value of $`r round(method_p_value, 3)` > 0.05$, thus we fail to
 reject the null hypothesis that **the method of dosage doesn't matter** at a
 significance level of 5%.
+
+## Does the amount of dosage matter?
+
+Another trend that the graph indicated was that higher dosages might result in
+longer tooth lengths. To test this, dosages equal to 2 mg/day are considered as
+one group and dosages less than this are considered as another group.
+Thus the above can be tested with a t-test where
+$$
+\mu_0: \bar{x}_{hi} - \bar{x}_{lo} = 0
+$$
+$$
+\mu_a: \bar{x}_{hi} - \bar{x}_{lo} > 0
+$$
+Here $\bar{x}_{hi}$ is the mean of tooth lengths for guinea pigs having dosage
+amount equal to 2 mg/day and $\bar{x}_{lo}$ is the mean of tooth lengths for
+those having dosage amount equal to 0.5 mg/day or 1 mg/day.
+
+```{r amount_t_test}
+tooth_length_hi <- filter(ToothGrowth, dose == 2) %>% select(len)
+tooth_length_lo <- filter(ToothGrowth, dose < 2) %>% select(len)
+(amount_p_value <- t.test(tooth_length_hi, tooth_length_lo)$p.value)
+```
+
+The test has a p-value of $`r round(amount_p_value, 3)` < 0.05$, thus we reject
+the null hypothesis at a significance level of 5% and can say that **higher
+dosages are responsible for longer tooth lengths**.
